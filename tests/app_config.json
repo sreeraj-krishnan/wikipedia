@@ -1,0 +1,31 @@
+{
+	"paragraph_length" : 5000,
+	"paragraph_line"   : 1,
+	"total_questions"  : 5,
+	"possible_answers_line" : 7,
+	"possible_answer_delimiter" : ";",	
+        "question_lines"   : { "start" : 2 , "end" : 6 },
+	"total_lines"      : 7,
+	"skip_words"       : [
+		"is",
+		"are",
+		"the",
+		"of",
+		"by",
+		"to",
+		"their",
+		"and",
+		"a",
+		"an",
+		"them",
+		"in",
+		"which",
+		"what",
+		"how",
+		"much",
+		"why",
+		"where",
+		"some"
+		
+	]
+}
