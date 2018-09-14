@@ -6,6 +6,7 @@ class Paragraph(object):
         def __init__(self, paragraph, appconfig):
             self.paragraph = paragraph
             self.lines = []
+            self.appconfig = appconfig
 
             # keywords to line
             self.keywords = {}
@@ -16,8 +17,12 @@ class Paragraph(object):
 
 
         def get_line(self):
+            total_len = 0
 
             for line in self.paragraph.split('.'):
+                total_len += len(line)
+                if total_len > self.appconfig.get_value('paragraph_length'):
+                    raise ValueError('input exceeds ' + str(self.appconfig.get_value('paragraph_length')) + ' characters')
                 yield line
         
 
