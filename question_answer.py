@@ -4,21 +4,7 @@ class QuestionAnswer(object):
         def __init__(self, question):
             self.question = question
             self.answer = None
-            self.is_valid_question = True
 
-        def get_question(self):
-            return self.question
-
-        def is_valid(self):
-            return self.is_valid_question
-
-        def update_possible_lines(self, possible_lines, paragraph, word):
-            if len(possible_lines) == 0:
-                possible_lines = paragraph.keywords[ word ]
-            else:
-                possible_lines.union( paragraph.keywords[ word ] )
-            
-            return possible_lines
 
         def find_answer(self, paragraph, possible_answers):
 

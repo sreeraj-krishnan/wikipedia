@@ -7,11 +7,8 @@ class AppConfig(object):
 
         self.app_config = {}
 
-        try:
-            config = JSONReader(config_file)
-            self.app_config = config.get_json()
-        except Exception as e:
-            print e
+        config = JSONReader(config_file)
+        self.app_config = config.get_json()
 
     def get_value(self,key, key2=None):
         try:

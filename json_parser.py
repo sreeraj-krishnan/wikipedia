@@ -14,11 +14,7 @@ class JSONReader(object):
 	def get_json(self):
 	    self.fullpath = self.filename
             if not os.path.isfile( self.filename):
-                cwd = os.getcwd()
-                self.fullpath = os.path.join(cwd , self.filename)
-                if not os.path.isfile(fullpath):
-                    print "File ", self.filename  ," does not exist "
-                    return '{}'
+                return '{}'
             else:
                 self.fullpath = self.filename
 			
@@ -27,8 +23,3 @@ class JSONReader(object):
 		
             return data
 
-'''
-if __name__ == '__main__':
-    pass
-    #print str(j.get_json()['symbols'][0]['next_allowed_for_subtraction'][0])
-'''
