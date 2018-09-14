@@ -1,6 +1,8 @@
 from app_config import AppConfig
 from parser import Parser
 from possible_answers import PossibleAnswers
+
+
 class Wikipedia(object):
 
     def __init__(self, input_file, appconfig_file):
