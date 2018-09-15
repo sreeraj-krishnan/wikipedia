@@ -24,5 +24,5 @@ if __name__ == '__main__':
         wiki.calculate_and_print_answers()
     except Exception as e:
          print e
-         traceback.print_exc(file=sys.stdout)
+         #traceback.print_exc(file=sys.stdout)
 
