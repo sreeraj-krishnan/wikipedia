@@ -18,19 +18,24 @@ from json_parser import JSONReader
 class TestAll(unittest.TestCase):
 
     def no_answer_question(self):
-        cwd = os.getcwd()
-        configuration_file = os.path.join(cwd,"config", "app_config.json")
         try:
+            cwd = os.getcwd()
+            configuration_file = os.path.join(cwd,"config", "app_config.json")
             wiki = Wikipedia('tests/err', configuration_file)
             wiki.parse_input()
-            wiki.parse_input()
             wiki.calculate_and_print_answers()
-            q = QuestionAnswer('why is the earth flat?')
-            q.find_answer(wiki.paragraph, wiki.appconfig)
             self.assertEqual(False,"test faile")
         except Exception as e:
             print e
             self.assertEqual(True,True)
+
+        try:
+            wiki = Wikipedia('tests/test.input8', configuration_file)
+            q = QuestionAnswer('why is the earth flat?')
+            self.assertEqual( False, q.find_answer(wiki.paragraph, wiki.appconfig) )
+        except Exception as e:
+            self.assertEqual(False,"test faile")
+            
     
     def input_error(self):
         cwd = os.getcwd()

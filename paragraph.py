@@ -45,7 +45,7 @@ class Paragraph(object):
 
                 for token in tokens:
                     #token = re.sub(r'\W+','',token)
-                    token = token.strip().lower().replace(',','').replace('.','').replace('(','').replace(')','').replace('[','').replace(']','')
+                    token = token.strip().lower().replace(',','').replace('.','').replace('(','').replace(')','').replace('[','').replace(']','').replace('-','').replace(':','')
                     
                     if unicode(token,encoding='utf-8') not in self.skip_words:
                         if token in self.keywords:
@@ -58,7 +58,4 @@ class Paragraph(object):
                 line_number += 1
 
             
-            self.debug_file()
-            
-            #for key in self.keywords:
-            #    print self.keywords[ key ]
+            #self.debug_file()

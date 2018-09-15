@@ -37,9 +37,6 @@ class QuestionAnswer(object):
                                     line_count[l] = 1
                             
 
-                else:
-                    pass
-
             if len(possible_lines) > 0 :
                 a1_sorted_keys = sorted(line_count, key=line_count.get, reverse=True)
                 for answer_line in a1_sorted_keys:
